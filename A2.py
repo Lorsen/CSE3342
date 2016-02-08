@@ -12,31 +12,23 @@
 
 import re
 
-
 def getSumOfHexValuesFromString (inputString):
 
-    sum = 0
+    total = 0
+
+    inputString = re.findall(r'[a-f0-9A-F]+', inputString)
+
+    total = sum(int(x, 16) for x in inputString)
+
+    return total
+
+hexStrings = ["mnpy4ujk6uya", "abcxyz123xyzdef"]  #return 20 , 6606
+
+for i in range (0, len(hexStrings)):
+     sumOfHexValues = getSumOfHexValuesFromString(hexStrings[i])
+     print ("Sum of hex values in " + "'" + hexStrings[i] +
+      "'" + " is: " + str(sumOfHexValues))
 
 
 
 
-    return sum
-
-
-testCases = ["mnpy4ujk6uya", "abcxyz123xyzdef"]  #return 20 , 6438
-
-splitString = re.sub(r'[^a-f0-9A-F]'," ", testCases[1])
-
-#ignore comments for now, attempt to find sum
-#sum = sum(int(x, 16) for x in splitString if x.isdigit())
-#print (str(sum))
-
-print (splitString)
-
-splitString = re.sub(r'[^a-f0-9A-F]', " ", testCases[0])
-
-print ("before split function: " + splitString)
-
-splitString.split(' ')
-
-print("after split function: " + splitString + " - spaces still remain")
