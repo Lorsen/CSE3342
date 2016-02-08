@@ -29,6 +29,8 @@ for i in range (0, len(hexStrings)):
      print ("Sum of hex values in " + "'" + hexStrings[i] +
       "'" + " is: " + str(sumOfHexValues))
 
+encodedCommands = ["avc7fsrd5vcc12vfscsrwt1qw7eetrs&fsrsy", #return t1 s
+                   "fdjhads jhf&5672t3zcxvb,m654godjhfjdyeuyr123jfjjdjfjdf77djsfhdjhfdsf99"] #return t3 go 123 77
 
 
 
