@@ -31,16 +31,16 @@ def getSumOfHexValuesFromString (inputString):
 def getDecodedCommand(encodedCommand):
 
  # matching go command
- if re.search(r'(t[0-9]+).+(go)\D+(\d+)?\D+(\d+)?', encodedCommand):
+ if re.search(r'(t[0-9]+).*(go)\D*(\d+)?\D*(\d+)?', encodedCommand):
      # actually extract tuples
-     inputString = re.findall(r'(t[0-9]+).+(go)\D+(\d+)?\D+(\d+)?', encodedCommand)
+     inputString = re.findall(r'(t[0-9]+).*(go)\D*(\d+)?\D*(\d+)?', encodedCommand)
      # convert list of tuples to string
      convertedString = (" ".join("%s %s %s %s" % tup for tup in inputString))
 
  # matching stop command
- elif re.search(r'(t[0-9]+).+(s)', encodedCommand):
+ elif re.search(r'(t[0-9]+).*(s)', encodedCommand):
     # actually extract tuples
-    inputString = re.findall(r'(t[0-9]+).+(s)', encodedCommand)
+    inputString = re.findall(r'(t[0-9]+).*(s)', encodedCommand)
     # convert list of tuples to string
     convertedString =  (" ".join("%s %s" % tup for tup in inputString))
 
