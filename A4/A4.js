@@ -1,4 +1,4 @@
-function localDecode() {
+function localDecode(){
 
     var encodedCommand = document.getElementById("encodedCommand").value;
     var re = /(t[0-9]+).*(s|go)/;
@@ -25,14 +25,14 @@ function localDecode() {
     document.getElementById("decodedCode").innerHTML = out;
 };
 
-
-  function serverDecode(){
-            var encodedString = document.getElementById("input").value;
-            $.get(
-                "decode.py", 
-                {cmd:encodedString},
-                function(data){
-                    command = data["decodedString"];
-                    document.getElementById("output").innerHTML = command;
-                }
-            );
+function serverDecode() {
+    var encodedCommand = document.getElementById("encodedCommand").value;
+ var data = $.getJSON(
+        "A2server.py", {
+            msg : encodedCommand
+        },
+        function (data) {            
+            command = data["command"];
+            document.getElementById("decodedCode").innerHTML = command;
+        }
+        )};
