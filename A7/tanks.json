@@ -1,0 +1,6 @@
+[
+  {"id":"t1", "x":380, "y":320, "team":"alpha", "health": 10},
+  {"id":"t2", "x":150, "y":70,  "team":"bravo", "health": 10},
+  {"id":"t3", "x":400, "y":90,  "team":"bravo", "health": 10},
+  {"id":"t4", "x":650, "y":70,  "team":"bravo", "health": 10}
+]

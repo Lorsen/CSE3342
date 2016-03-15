@@ -1,0 +1,9 @@
+{"terrainList":[
+   {"x":200,      "y":20,      "width":50,      "height":40,      "terrain":"hq1"   },
+
+   {"x":370,      "y":450,      "width":50,      "height":40,      "terrain":"hq2"   },
+
+   {"x":300,   "y":150,      "width":200,      "height":50,      "terrain":"mtn"   }
+
+]
+}
