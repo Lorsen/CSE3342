@@ -79,7 +79,7 @@ var SquadAlpha = function(squadName, tankList, homeHq, enemyHq) {
                     
                     var serverData = $.ajax({
                     type: "GET",
-                    url: 'http://lyle.smu.edu/~oroa/cse3342/A8/A8serverdecode.py?msg=' + msg,
+                    url: 'http://lyle.smu.edu/~oroa/cse3342/A8/A8serverdecode.php?msg=' + msg,
                     async: false
                   });
 
