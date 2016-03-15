@@ -1,0 +1,29 @@
+<!-- Lorsen -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="TankAI.js"></script>
+    </head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+
+console.log("starting script");
+
+var tank1 = new TankAI("t1");
+var tankState = {"x":5, "y":5, "dir":90, "speed":10};
+    
+    
+console.log(tank1.getMove(tankState));
+    
+tank1.setDestination(10,10);
+    
+console.log(tank1.getMove(tankState));
+    
+</script>
+
+</body>
+</html>
