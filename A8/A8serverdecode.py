@@ -6,7 +6,7 @@ import re
 import cgitb
 cgitb.enable()
 
-print "Content-Type: text/html\r\n\r\n"
+print "Content-Type: text/json\n"
 
 parmDict = cgi.FieldStorage()
 
@@ -31,7 +31,7 @@ def getDecodedCommand(encodedCommand):
     codedString = re.findall(r'(t[0-9]+).*(nap)', encodedCommand)
     
     decodedString = list(codedString)
-    decodedString[1]='stop'
+    decodedString[1]='s'
     
     # convert list of tuples to string
     convertedString =  (" ".join("%s %s" % tup for tup in inputString))
@@ -44,4 +44,6 @@ for element in range(0, len(encodedCommand)):
 
 data = {"command": command}
 
-print data
+json_data = json.dumps(data)
+
+print json_data

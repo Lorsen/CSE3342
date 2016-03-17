@@ -77,10 +77,17 @@ var SquadAlpha = function(squadName, tankList, homeHq, enemyHq) {
                     // found that the command is to our tank
                     // todo: send command to your server and get the msg
                     
-                    var serverData = $.ajax({
+                    $.ajax({
                     type: "GET",
-                    url: 'http://lyle.smu.edu/~oroa/cse3342/A8/A8serverdecode.php?msg=' + msg,
-                    async: false
+                    url: 'http://lyle.smu.edu/~oroa/cse3342/A8/A8serverdecode.py',
+                        dataType:'json',
+                        data:{cmd:msg},
+                    async: false,
+                          success: function(data) {
+              console.log("What up fam");
+              command = data["convertedString"];
+              console.log("Some shit: " + command);
+            }
                   });
 
 
