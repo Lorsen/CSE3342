@@ -84,17 +84,20 @@ var SquadAlpha = function(squadName, tankList, homeHq, enemyHq) {
                         data:{cmd:msg},
                         async: false,
                         success: function(data) {
-                            command = data["command"];
+                            command = data["msg"];
                         }
                     });
-
 
                     //   then deliver actual msg to your tank
 
                     console.log("JQuery returns this JSON object:" + JSON.stringify(data));
+                    
                     console.log(data.responseText);
+                    
                     var cmd = JSON.parse(data.responseText);
+                    
                     console.log(cmd.command);
+                    
                     tankList[idx].receiveMsg(cmd.command);
                 }
             }

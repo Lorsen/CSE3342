@@ -20,6 +20,7 @@ def getDecodedCommand(encodedCommand):
      inputString = re.findall(r'(t[0-9]+).*(go)\D*(\d+)?\D*(\d+)?', encodedCommand)
      # convert list of tuples to string
      convertedString = (" ".join("%s %s %s %s" % tup for tup in inputString))
+     return convertedString
 
  # matching stop command
  elif re.search(r'(t[0-9]+).*(s)', encodedCommand):
@@ -27,9 +28,7 @@ def getDecodedCommand(encodedCommand):
     inputString = re.findall(r'(t[0-9]+).*(s)', encodedCommand)
     # convert list of tuples to string
     convertedString =  (" ".join("%s %s" % tup for tup in inputString))
-
- return convertedString
-
+    return convertedString
 
 for element in range(0, len(encodedCommand)):
     command = getDecodedCommand(encodedCommand)
