@@ -79,26 +79,21 @@ var SquadAlpha = function(squadName, tankList, homeHq, enemyHq) {
                     
                      var data = $.ajax({
                         type: "GET",
-                        url: 'http://lyle.smu.edu/~oroa/cse3342/A8/A8serverdecode.py',
-                        dataType:'json',
-                        data:{cmd:msg},
-                        async: false,
-                        success: function(data) {
-                            command = data["msg"];
-                        }
+                        url: 'http://lyle.smu.edu/~oroa/cse3342/A8/A8serverdecode.py?msg='+msg,
+                         async: false
+
                     });
 
                     //   then deliver actual msg to your tank
 
-                    console.log("JQuery returns this JSON object:" + JSON.stringify(data));
+                    console.log("5:14 pm data: " + data.responseText);
                     
-                    console.log(data.responseText);
+                    var messageToSend = data.responseText;
                     
-                    var cmd = JSON.parse(data.responseText);
+                    console.log("messageToSend: " + messageToSend);
+
                     
-                    console.log(cmd.command);
-                    
-                    tankList[idx].receiveMsg(cmd.command);
+                    tankList[idx].receiveMsg(messageToSend);
                 }
             }
         }
